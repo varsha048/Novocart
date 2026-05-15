@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NovaCart - Login</title>
+    <link rel="stylesheet" href="../Css/login.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <nav class="navbar">
+        <div class="nav-left">
+            <a href="login.html" class="logo">NovaCart</a>
+            <div class="nav-links">
+                <a href="#">Shop</a>
+                <a href="#">About</a>
+            </div>
+        </div>
+        <div class="nav-right">
+            <a href="login.html" class="btn btn-outline">Login</a>
+            <a href="Register.html" class="btn btn-solid">Register</a>
+        </div>
+    </nav>
+
+    <main class="login-container">
+        <div class="login-card">
+            <div class="login-image">
+                <div class="image-overlay">
+                    <p class="welcome-text">WELCOME BACK</p>
+                    <h2>Access your cart and continue shopping faster.</h2>
+                    <p class="demo-text">Your demo account is stored locally in this browser for portfolio and learning
+                        use.</p>
+                </div>
+            </div>
+
+            <div class="login-form-container">
+                <div class="login-form-content">
+                    <h1>Login</h1>
+                    <p class="subtitle">Enter your registered email and password.</p>
+
+                    <form id="loginForm">
+                        <div class="form-group">
+                            <label for="email">Email address</label>
+                            <input type="email" id="email" required placeholder="name@example.com">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="password">Password</label>
+                            <input type="password" id="password" required placeholder="••••••••">
+                        </div>
+
+                        <div class="form-actions">
+                            <label class="remember-me">
+                                <input type="checkbox" id="remember" checked>
+                                <span>Remember me</span>
+                            </label>
+                            <a href="Register.html" class="create-account-link">Create account</a>
+                        </div>
+
+                        <button type="submit" class="btn-submit">Login</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script src="../Js/login.js"></script>
+</body>
+
+</html>
