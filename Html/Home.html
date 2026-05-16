@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NovaCart - Shop reliable products</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../Css/Home.css">
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="nav-left">
+            <a href="#" class="logo">NovaCart</a>
+            <ul class="nav-links">
+                <li><a href="#" class="active">Shop</a></li>
+                <li><a href="#">About</a></li>
+            </ul>
+        </div>
+        <div class="nav-right">
+            <button class="icon-btn" aria-label="Search"><i class="fa-solid fa-magnifying-glass"></i></button>
+            <div class="custom-select">
+                <select id="category-filter">
+                    <option value="all">All categories</option>
+                    <option value="electronics">Electronics</option>
+                    <option value="fashion">Fashion</option>
+                    <option value="home">Home</option>
+                    <option value="beauty">Beauty</option>
+                    <option value="sports">Sports</option>
+                    <option value="outdoor">Outdoor</option>
+                </select>
+                <i class="fa-solid fa-chevron-down select-icon"></i>
+            </div>
+            <a href="login.html" class="btn btn-outline">Login</a>
+            <a href="Register.html" class="btn btn-primary">Register</a>
+            <button class="icon-btn cart-btn" aria-label="Cart">
+                <i class="fa-solid fa-bag-shopping"></i>
+                <span class="cart-badge">0</span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="hero">
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <span class="badge new-collection">NEW COLLECTION</span>
+            <h1>Shop reliable products for everyday work and life.</h1>
+            <p>Curated electronics, fashion, home goods, and accessories with a fast local cart experience.</p>
+        </div>
+        <div class="hero-stats">
+            <div class="stat">
+                <h3>50</h3>
+                <p>Products</p>
+            </div>
+            <div class="stat">
+                <h3>5</h3>
+                <p>Pages</p>
+            </div>
+            <div class="stat">
+                <h3>24h</h3>
+                <p>Dispatch</p>
+            </div>
+        </div>
+    </header>
+
+    <!-- Products Section -->
+    <main class="products-container">
+        <div class="products-header">
+            <div class="header-text">
+                <h2>Products</h2>
+                <p id="product-count">Showing 1-10 of 50 products</p>
+            </div>
+            <div class="custom-select sort-select">
+                <select id="sort-filter">
+                    <option value="featured">Featured</option>
+                    <option value="price-low">Price: Low to High</option>
+                    <option value="price-high">Price: High to Low</option>
+                    <option value="rating">Top Rated</option>
+                </select>
+                <i class="fa-solid fa-chevron-down select-icon"></i>
+            </div>
+        </div>
+
+        <div class="product-grid" id="product-grid">
+            <!-- Products will be dynamically injected here -->
+        </div>
+
+        <div class="pagination" id="pagination">
+            <!-- Pagination will be dynamically injected here -->
+        </div>
+    </main>
+
+    <script src="../Js/Home.js"></script>
+</body>
+</html>
