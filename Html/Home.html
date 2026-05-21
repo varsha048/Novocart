@@ -19,11 +19,14 @@
             <a href="#" class="logo">NovaCart</a>
             <ul class="nav-links">
                 <li><a href="#" class="active">Shop</a></li>
-                <li><a href="#">About</a></li>
+                <li><a href="about.html">About</a></li>
             </ul>
         </div>
         <div class="nav-right">
-            <button class="icon-btn" aria-label="Search"><i class="fa-solid fa-magnifying-glass"></i></button>
+            <div class="search-container">
+                <i class="fa-solid fa-magnifying-glass search-icon"></i>
+                <input type="text" id="search-input" placeholder="Search products..." class="search-input">
+            </div>
             <div class="custom-select">
                 <select id="category-filter">
                     <option value="all">All categories</option>
@@ -38,7 +41,7 @@
             </div>
             <a href="login.html" class="btn btn-outline">Login</a>
             <a href="Register.html" class="btn btn-primary">Register</a>
-            <button class="icon-btn cart-btn" aria-label="Cart">
+            <button class="icon-btn cart-btn" aria-label="Cart" onclick="window.location.href='cart.html'">
                 <i class="fa-solid fa-bag-shopping"></i>
                 <span class="cart-badge">0</span>
             </button>
@@ -96,6 +99,7 @@
         </div>
     </main>
 
+    <script src="../Js/cart.js"></script>
     <script src="../Js/Home.js"></script>
 </body>
 </html>

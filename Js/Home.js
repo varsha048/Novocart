@@ -2,7 +2,6 @@ let allProducts = [];
 let filteredProducts = [];
 let currentPage = 1;
 const productsPerPage = 10;
-let cartCount = 0;
 
 // Initialize the app
 async function init() {
@@ -62,7 +61,7 @@ function renderProducts() {
                 <p class="product-desc" title="${product.description}">${product.description}</p>
                 <div class="product-footer">
                     <span class="product-price">$${product.price.toFixed(2)}</span>
-                    <button class="add-to-cart-btn" onclick="addToCart()">
+                    <button class="add-to-cart-btn" onclick="addToCart(${product.id})">
                         <i class="fa-solid fa-bag-shopping"></i> Add
                     </button>
                 </div>
@@ -154,13 +153,16 @@ function updateViewAndScroll() {
 function applyFiltersAndSort() {
     const category = document.getElementById('category-filter').value;
     const sort = document.getElementById('sort-filter').value;
+    const searchQuery = document.getElementById('search-input').value.toLowerCase().trim();
     
     // Filter
-    if (category === 'all') {
-        filteredProducts = [...allProducts];
-    } else {
-        filteredProducts = allProducts.filter(p => p.category === category);
-    }
+    filteredProducts = allProducts.filter(p => {
+        const matchesCategory = category === 'all' || p.category === category;
+        const matchesSearch = !searchQuery || 
+                              p.name.toLowerCase().includes(searchQuery) || 
+                              p.description.toLowerCase().includes(searchQuery);
+        return matchesCategory && matchesSearch;
+    });
     
     // Sort
     switch (sort) {
@@ -184,16 +186,11 @@ function applyFiltersAndSort() {
 }
 
 // Handle Add to Cart
-function addToCart() {
-    cartCount++;
-    const badge = document.querySelector('.cart-badge');
-    badge.innerText = cartCount;
-    
-    // Small animation for feedback
-    badge.style.transform = 'scale(1.2)';
-    setTimeout(() => {
-        badge.style.transform = 'scale(1)';
-    }, 200);
+function addToCart(productId) {
+    const product = allProducts.find(p => p.id === productId);
+    if (product && typeof addToCartGlobal === 'function') {
+        addToCartGlobal(product);
+    }
 }
 
 // Set up event listeners on DOM Load
@@ -202,4 +199,5 @@ document.addEventListener('DOMContentLoaded', () => {
     
     document.getElementById('category-filter').addEventListener('change', applyFiltersAndSort);
     document.getElementById('sort-filter').addEventListener('change', applyFiltersAndSort);
+    document.getElementById('search-input').addEventListener('input', applyFiltersAndSort);
 });

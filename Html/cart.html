@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NovaCart - Your Cart</title>
+    <!-- Link to the external CSS files -->
+    <link rel="stylesheet" href="../Css/about.css"> <!-- Reuse some base styles like navbar -->
+    <link rel="stylesheet" href="../Css/cart.css">
+    <!-- Google Fonts for modern typography -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="cart-page-body">
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="nav-left">
+            <a href="Home.html" class="logo">NovaCart</a>
+            <div class="nav-links">
+                <a href="Home.html">Shop</a>
+                <a href="about.html">About</a>
+            </div>
+        </div>
+        <div class="nav-right">
+            <a href="login.html" class="btn btn-outline">Login</a>
+            <a href="Register.html" class="btn btn-solid">Register</a>
+            <button class="icon-btn cart-btn active" aria-label="Cart" onclick="window.location.href='cart.html'">
+                <i class="fa-solid fa-bag-shopping"></i>
+                <span class="cart-badge">0</span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Cart Container -->
+    <main class="cart-container">
+        <div class="cart-header">
+            <h1>Shopping Cart</h1>
+            <p id="cart-item-count">0 items</p>
+        </div>
+
+        <div class="cart-content" id="cart-content">
+            <!-- Left Side: Cart Items -->
+            <div class="cart-items-section" id="cart-items-container">
+                <!-- Items will be injected here dynamically -->
+            </div>
+
+            <!-- Right Side: Order Summary -->
+            <div class="cart-summary-section" id="cart-summary-container">
+                <div class="summary-card">
+                    <h2>Order Summary</h2>
+                    <div class="summary-row">
+                        <span>Subtotal</span>
+                        <span id="summary-subtotal">$0.00</span>
+                    </div>
+                    <div class="summary-row">
+                        <span>Shipping Estimate</span>
+                        <span id="summary-shipping">$5.00</span>
+                    </div>
+                    <div class="summary-row">
+                        <span>Tax Estimate</span>
+                        <span id="summary-tax">$0.00</span>
+                    </div>
+                    <hr>
+                    <div class="summary-row total-row">
+                        <span>Total</span>
+                        <span id="summary-total">$0.00</span>
+                    </div>
+                    <button class="btn-checkout" onclick="alert('Checkout process initiated!')">Proceed to Checkout</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Empty Cart State (Hidden by default) -->
+        <div class="empty-cart-state" id="empty-cart-state" style="display: none;">
+            <i class="fa-solid fa-cart-arrow-down empty-icon"></i>
+            <h2>Your cart is empty</h2>
+            <p>Looks like you haven't added anything to your cart yet.</p>
+            <a href="Home.html" class="btn btn-solid mt-4">Continue Shopping</a>
+        </div>
+    </main>
+
+    <!-- Link to the external JS file -->
+    <script src="../Js/cart.js"></script>
+</body>
+</html>

@@ -122,6 +122,38 @@ button {
     pointer-events: none;
 }
 
+/* Search Input */
+.search-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.search-icon {
+    position: absolute;
+    left: 1rem;
+    color: var(--text-muted);
+    font-size: 0.875rem;
+}
+
+.search-input {
+    appearance: none;
+    background-color: var(--bg-main);
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    padding: 0.5rem 1rem 0.5rem 2.5rem;
+    font-size: 0.875rem;
+    color: var(--text-main);
+    font-family: var(--font-family);
+    outline: none;
+    transition: var(--transition);
+    width: 200px;
+}
+
+.search-input:focus {
+    border-color: var(--primary-color);
+}
+
 .btn {
     padding: 0.5rem 1.25rem;
     border-radius: 4px;
